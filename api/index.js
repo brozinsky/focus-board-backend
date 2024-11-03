@@ -9,13 +9,15 @@ const spotifyRoutes = require("../routes/spotifyRoutes");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(
-  cors({
-    origin: process.env.FRONTEND_URL,
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: process.env.FRONTEND_URL,
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     credentials: true,
+//   })
+// );
+
+app.use(cors());
 
 app.use("/api/youtube", youtubeRoutes);
 app.use("/api/cloudinary", cloudinaryRoutes);
