@@ -2,9 +2,9 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
-const youtubeRoutes = require("./routes/youtubeRoutes");
-const cloudinaryRoutes = require("./routes/cloudinaryRoutes");
-const spotifyRoutes = require("./routes/spotifyRoutes");
+const youtubeRoutes = require("../routes/youtubeRoutes");
+const cloudinaryRoutes = require("../routes/cloudinaryRoutes");
+const spotifyRoutes = require("../routes/spotifyRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
