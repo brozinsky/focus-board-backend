@@ -1,7 +1,7 @@
 const axios = require("axios");
+const { CACHE_TTL } = require("../utils/variables");
 
 const cache = {};
-const CACHE_TTL = 1000 * 60 * 60 * 24; // 24 hours
 
 exports.getYoutubePlaylist = async (req, res, playlistId) => {
   const YT_BASE_URL = "https://www.googleapis.com/youtube/v3/playlistItems";
@@ -15,7 +15,7 @@ exports.getYoutubePlaylist = async (req, res, playlistId) => {
 
   if (cached && now - cached.timestamp < CACHE_TTL) {
     console.log(`[CACHE] Returning cached data for playlist ${playlistId}`);
-    return res.json(cached.data); // return cached data
+    return res.json(cached.data);
   }
 
   console.log(`[FETCH] Fetching fresh data for playlist ${playlistId}`);
